@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.github.yakami.infrastructure.starter'
+group 'io.github.yakami1290'
 version '1.0.0'
 
 repositories {
