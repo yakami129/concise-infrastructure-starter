@@ -6,7 +6,8 @@ plugins {
 
 description = "chatgpt-java-sdk"
 group 'io.github.yakami129'
-version = '1.0.0-RELEASES'
+version = '1.0.0-SNAPSHOT'
+archivesBaseName = "chatgpt-java-sdk"
 sourceCompatibility = '11'
 
 bootJar.enabled = false

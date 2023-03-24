@@ -9,7 +9,7 @@ plugins {
 allprojects {
     apply plugin: 'idea'
     apply plugin: 'eclipse'
-    group = 'com.github.yakami'
+    group = 'io.github.yakami129'
     version = '1.0.0'
 }
 
@@ -17,6 +17,7 @@ subprojects {
 
     apply plugin: 'java'
     apply plugin: 'maven'
+    apply plugin: 'signing'
 
     sourceCompatibility = '11'
 
@@ -86,5 +87,65 @@ subprojects {
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
+
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    artifacts {
+        archives sourcesJar
+    }
+
+    signing {
+        sign configurations.archives
+    }
+
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+                repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+
+                snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+
+                pom.project {
+                    name 'concise-infrastructure-starter'
+                    packaging 'jar'
+                    // optionally artifactId can be defined here
+                    description 'This is a Java infrastructure component library to help users quickly build frameworks'
+                    url 'https://github.com/yakami129/concise-infrastructure-starter'
+
+                    scm {
+                        connection 'https://github.com/yakami129/concise-infrastructure-starter.git'
+                        url 'https://github.com/yakami129/concise-infrastructure-starter.git'
+                    }
+
+                    licenses {
+                        license {
+                            name 'The Apache License, Version 2.0'
+                            url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id 'okapi0129'
+                            name 'okapi0129'
+                            email 'okapi0129@outlook.com'
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 }

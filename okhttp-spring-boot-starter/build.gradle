@@ -8,6 +8,7 @@ description = "okhttp3-starter"
 group 'io.github.yakami129'
 version = '1.0.0-RELEASES'
 sourceCompatibility = '11'
+archivesBaseName = "okhttp3-starter"
 
 bootJar.enabled = false
 
