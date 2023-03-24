@@ -5,8 +5,8 @@ plugins {
 }
 
 description = "chatgpt-java-sdk"
-group = 'com.github.yakami.starter.chatgpt'
-version = '1.0.0'
+group 'com.github.yakami'
+version = '1.0.0-RELEASES'
 sourceCompatibility = '11'
 
 bootJar.enabled = false
@@ -28,7 +28,7 @@ dependencyManagement {
     }
 }
 
-test {
-    useJUnitPlatform()
-}
+//test {
+//    useJUnitPlatform()
+//}
 

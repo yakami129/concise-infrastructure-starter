@@ -5,8 +5,8 @@ plugins {
 }
 
 description = "okhttp3-starter"
-group = 'com.github.yakami.starter.okhttp'
-version = '1.0.0'
+group 'com.github.yakamir'
+version = '1.0.0-RELEASES'
 sourceCompatibility = '11'
 
 bootJar.enabled = false
