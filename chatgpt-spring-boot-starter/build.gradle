@@ -5,7 +5,7 @@ plugins {
 }
 
 description = "chatgpt-java-sdk"
-group 'io.github.yakami1290'
+group 'io.github.yakami129'
 version = '1.0.0-RELEASES'
 sourceCompatibility = '11'
 
