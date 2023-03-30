@@ -1,5 +1,6 @@
 rootProject.name = 'concise-infrastructure-starter'
 include 'notion-spring-boot-starter'
-include 'chatgpt-spring-boot-starter'
-include 'okhttp-spring-boot-starter'
+include 'chatgpt-starter'
+include 'okhttp-starter'
+include 'netty-spring-boot-starter'
 

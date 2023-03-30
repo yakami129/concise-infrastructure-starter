@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+description = "Netty通讯框架"
+group 'io.github.yakami129'
+version = '1.0.0-RELEASES'
+sourceCompatibility = '11'
+bootJar.enabled = false
+
+dependencies {
+    compile "io.netty:netty-handler:${nettyVersion}"
+    compile "io.netty:netty-codec:${nettyVersion}"
+    compile "io.netty:netty-codec-http:${nettyVersion}"
+    compile "io.netty:netty-common:${nettyVersion}"
+    compile "io.netty:netty-buffer:${nettyVersion}"
+    compile "io.netty:netty-transport:${nettyVersion}"
+    compile "io.netty:netty-transport-native-epoll:${nettyVersion}"
+    compile "com.google.protobuf:protobuf-java:${protobufVersion}"
+    compile  "org.apache.commons:commons-pool2:${pool2Version}"
+
+    compileOnly "org.springframework.boot:spring-boot-starter-data-redis"
+    compileOnly "org.springframework.boot:spring-boot-starter-logging"
+    compileOnly "org.springframework.boot:spring-boot-autoconfigure"
+    compileOnly "org.springframework.boot:spring-boot-starter-web"
+    compileOnly 'org.slf4j:slf4j-api'
+    compileOnly 'com.fasterxml.jackson.core:jackson-databind'
+
+    testImplementation "org.springframework.boot:spring-boot-starter-data-redis"
+    testImplementation "org.springframework.boot:spring-boot-starter-logging"
+    testImplementation "org.springframework.boot:spring-boot-autoconfigure"
+    testImplementation "org.springframework.boot:spring-boot-starter-web"
+    testImplementation 'org.slf4j:slf4j-api'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}

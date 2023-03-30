@@ -70,6 +70,9 @@ subprojects {
         jsoupVersion = '1.11.3'
         codehausVersion = '1.22'
         retrofit2Version = '2.8.2'
+        nettyVersion = '4.1.86.Final'
+        protobufVersion = '3.19.6'
+        pool2Version = '2.4.2'
     }
 
     dependencies {

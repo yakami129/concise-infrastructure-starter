@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    io.github.yakami129.starter.netty.NettyAutoConfiguration
