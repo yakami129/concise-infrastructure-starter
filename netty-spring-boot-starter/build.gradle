@@ -6,7 +6,7 @@ plugins {
 
 description = "Netty通讯框架"
 group 'io.github.yakami129'
-version = '1.0.0-RELEASES'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '11'
 bootJar.enabled = false
 
