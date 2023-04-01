@@ -1,7 +1,6 @@
 package io.github.yakami129.starter.okhttp.request;
 
 import com.alibaba.fastjson2.JSONObject;
-import io.github.yakami129.starter.okhttp.Interceptor.LoggerInterceptor;
 import io.github.yakami129.starter.okhttp.OkHttpUtils;
 import io.github.yakami129.starter.okhttp.retryer.RetryerHandle;
 import io.github.yakami129.starter.okhttp.ssl.SslUtils;
@@ -100,8 +99,8 @@ public class RequestCall {
                     .connectTimeout(connTimeOut, TimeUnit.MILLISECONDS)
                     .readTimeout(readTimeOut, TimeUnit.MILLISECONDS)
                     .writeTimeout(writeTimeOut, TimeUnit.MILLISECONDS)
-                    .retryOnConnectionFailure(true)
-                    .addInterceptor(new LoggerInterceptor());
+                    .retryOnConnectionFailure(true);
+            //.addInterceptor(new LoggerInterceptor());
 
             if (ignoreSsl) {
                 try {

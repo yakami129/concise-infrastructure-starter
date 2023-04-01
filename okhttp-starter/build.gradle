@@ -6,7 +6,7 @@ plugins {
 
 description = "OkHttp3的工具类"
 group 'io.github.yakami129'
-version = '1.0.0-RELEASES'
+version = '1.0.1-RELEASES'
 sourceCompatibility = '11'
 
 bootJar.enabled = false

@@ -29,7 +29,7 @@ public class OkHttpUtils {
                     .readTimeout(DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS)
                     .writeTimeout(DEFAULT_MILLISECONDS, TimeUnit.MILLISECONDS)
                     .retryOnConnectionFailure(true)
-                    .addInterceptor(new LoggerInterceptor())
+                    //.addInterceptor(new LoggerInterceptor())
                     .build();
         } else {
             mOkHttpClient = okHttpClient;
